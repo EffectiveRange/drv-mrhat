@@ -1,0 +1,5 @@
+Package: mrhat-platform
+Version: 0.1.0
+Maintainer: Effective Range Kft.
+Architecture: armhf
+Description: Device driver and device tree overlay for the Effective Range MrHat extension hat for RaspberryPi

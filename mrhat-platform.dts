@@ -1,0 +1,51 @@
+/*
+* Copyright (C) 2024 Effective Range Kft.
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License version 2 as
+* published by the Free Software Foundation.
+*/
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/interrupt-controller/irq.h>
+
+/ {
+    compatible = "brcm,bcm2835";
+	
+	fragment@0 {
+        target-path = "/";
+
+		__overlay__ {
+			status = "okay";
+			mrhat: mrhat {
+				compatible = "er,mrhat";
+                heartbeat-gpios = <&gpio 0x19 GPIO_ACTIVE_HIGH>;
+                er,heartbeat-period-ms = <1000>;
+                er,heartbeat-pulse-width-ms = <20>;
+				status = "okay";
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <&gpio>;
+		__overlay__ {
+			mrhat_pins: mrhat_pins {
+				brcm,pins = <0x19>;
+				brcm,function = <0x1>; /* out */
+				brcm,pull = <0>; /* none */
+			};
+		};
+	};
+
+	__overrides__ {
+		/* GPIO number of heartbeat pin */
+		hb_pin = <&mrhat>, "heartbeat-gpios:4",
+		              <&mrhat_pins>, "brcm,pins:0";
+        hb_period_ms = <&mrhat>, "er,heartbeat-period-ms:0";
+        hb_pulse_ms = <&mrhat>, "er,heartbeat-pulse-width-ms:0";
+	};
+
+};
