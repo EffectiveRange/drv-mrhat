@@ -41,7 +41,7 @@ jobs:
           submodules: true
       - 
         name: Set up QEMU for multi-architecture builds
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
       -
         name: Extract project name
         id: extract
