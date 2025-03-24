@@ -1,7 +1,0 @@
-#!/bin/bash
-echo "Removing module autoload for er-mrhat-plat ..."
-sed -ri '/^\s*er-mrhat-plat/d' /etc/modules
-
-depmod
-
-echo "Removal of mrhat-platform completed, please remove 'dtoverlay=mrhat-platform' from /boot/config.txt if not needed anymore then reboot ..."

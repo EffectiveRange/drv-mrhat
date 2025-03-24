@@ -1,0 +1,7 @@
+project: mrhat-platform
+version: auto
+modulename: er-mrhat-plat
+maintainer: Effective Range Kft.
+description: >
+  Device driver and device tree overlay for the 
+  Effective Range MrHat extension hat for RaspberryPi

@@ -1,3 +1,0 @@
-#!/bin/bash
-# removing existing dtb file, as it blocks installation
-rm -f /boot/overlays/mrhat-platform.dtbo
