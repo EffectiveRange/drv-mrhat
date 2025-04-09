@@ -22,8 +22,8 @@
 			mrhat: mrhat {
 				compatible = "er,mrhat";
                 heartbeat-gpios = <&gpio 0x19 GPIO_ACTIVE_HIGH>;
-                er,heartbeat-period-ms = <1000>;
-                er,heartbeat-pulse-width-ms = <20>;
+                er,heartbeat-period-ms = <100>;
+                er,heartbeat-pulse-width-ms = <50>;
 				status = "okay";
 			};
 		};
