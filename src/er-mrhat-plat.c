@@ -161,7 +161,10 @@ static int er_mrhat_probe(struct platform_device *pdev) {
   mod_timer(&mrhat_dev->hb_timer,
             jiffies + msecs_to_jiffies(mrhat_dev->pulse_width_ms));
 
-  dev_info(mrhat_dev->dev, "mrhat driver successfully initialized");
+  dev_info(mrhat_dev->dev, "mrhat driver successfully initialized period:%u pulse:%u "
+                            "period2pulse:%u",
+           mrhat_dev->period_ms, mrhat_dev->pulse_width_ms,
+           mrhat_dev->pulse_to_period_ms);
   return 0;
 }
 
