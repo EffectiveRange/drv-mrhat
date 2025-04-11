@@ -184,4 +184,4 @@ MODULE_AUTHOR("Ferenc Janky");
 MODULE_AUTHOR("Attila Gombos");
 MODULE_DESCRIPTION(
     "Platform driver for the MrHATv1 family of RaspberryPi extension hats");
-MODULE_VERSION("0.1.1");
+MODULE_VERSION("0.1.3");
